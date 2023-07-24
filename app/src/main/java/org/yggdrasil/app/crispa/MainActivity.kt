@@ -87,6 +87,7 @@ class MainActivity : AppCompatActivity() {
             if (isChecked) {
                 startVpn()
             } else {
+                startVpn()
                 stopVpn()
             }
         }

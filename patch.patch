@@ -1,0 +1,95 @@
+diff --git a/.idea/compiler.xml b/.idea/compiler.xml
+index fb7f4a8..61a9130 100644
+--- a/.idea/compiler.xml
++++ b/.idea/compiler.xml
+@@ -1,6 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="CompilerConfiguration">
+-    <bytecodeTargetLevel target="11" />
++    <bytecodeTargetLevel target="1.8" />
+   </component>
+ </project>
+\ No newline at end of file
+diff --git a/.idea/gradle.xml b/.idea/gradle.xml
+index d0eed1e..00ce4ec 100644
+--- a/.idea/gradle.xml
++++ b/.idea/gradle.xml
+@@ -7,6 +7,7 @@
+         <option name="testRunner" value="GRADLE" />
+         <option name="distributionType" value="DEFAULT_WRAPPED" />
+         <option name="externalProjectPath" value="$PROJECT_DIR$" />
++        <option name="gradleJvm" value="11" />
+         <option name="modules">
+           <set>
+             <option value="$PROJECT_DIR$" />
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+index 57bb2d2..6c382f0 100644
+--- a/.idea/misc.xml
++++ b/.idea/misc.xml
+@@ -1,4 +1,3 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="DesignSurface">
+     <option name="filePathToZoomLevelMap">
+@@ -10,7 +9,7 @@
+       </map>
+     </option>
+   </component>
+-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+     <output url="file://$PROJECT_DIR$/build/classes" />
+   </component>
+   <component name="ProjectType">
+diff --git a/.idea/vcs.xml b/.idea/vcs.xml
+index 35eb1dd..c41cfd1 100644
+--- a/.idea/vcs.xml
++++ b/.idea/vcs.xml
+@@ -2,5 +2,6 @@
+ <project version="4">
+   <component name="VcsDirectoryMappings">
+     <mapping directory="" vcs="Git" />
++    <mapping directory="$PROJECT_DIR$/yggdrasil/yggdrasil-go" vcs="Git" />
+   </component>
+ </project>
+\ No newline at end of file
+diff --git a/app/build.gradle b/app/build.gradle
+index 43d92d0..49c02b9 100644
+--- a/app/build.gradle
++++ b/app/build.gradle
+@@ -9,7 +9,7 @@ android {
+     compileSdkVersion 33
+     defaultConfig {
+         applicationId "io.github.chronosx88.yggdrasil"
+-        minSdkVersion 15
++        minSdkVersion 16
+         targetSdkVersion 33
+         versionCode 43
+         versionName "2.1.7"
+diff --git a/app/src/main/java/org/yggdrasil/app/crispa/MainActivity.kt b/app/src/main/java/org/yggdrasil/app/crispa/MainActivity.kt
+index 04e6589..8ebf60e 100644
+--- a/app/src/main/java/org/yggdrasil/app/crispa/MainActivity.kt
++++ b/app/src/main/java/org/yggdrasil/app/crispa/MainActivity.kt
+@@ -3,6 +3,8 @@ package org.yggdrasil.app.crispa
+ import android.app.Activity
+ import android.app.ActivityManager
+ import android.content.*
++import android.net.Network
++import android.net.NetworkCapabilities
+ import android.net.VpnService
+ import android.os.Build
+ import android.os.Bundle
+@@ -87,6 +89,7 @@ class MainActivity : AppCompatActivity() {
+             if (isChecked) {
+                 startVpn()
+             } else {
++                startVpn()
+                 stopVpn()
+             }
+         }
+diff --git a/yggdrasil/yggdrasil-go b/yggdrasil/yggdrasil-go
+--- a/yggdrasil/yggdrasil-go
++++ b/yggdrasil/yggdrasil-go
+@@ -1 +1 @@
+-Subproject commit 42d4298e197e9f4455b9ed34e9b49847cc10af63
++Subproject commit 42d4298e197e9f4455b9ed34e9b49847cc10af63-dirty
